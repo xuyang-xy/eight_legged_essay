@@ -10,9 +10,9 @@ Batch Normalization & Layer Normalization
 04. BatchNorm 局限：  
 (1) BN对于batch_size的大小敏感的，batch_size很小的时候效果不稳定  
 (2) BN对于序列化模型效果不太好， NLP任务上比较少用
-05. LayerNorm 效果：
+05. LayerNorm 效果：  
 (1) LayerNorm 能够很好的应用在序列化网络上  
 (2) LayerNorm 对batch size 不敏感
 06. BatchNorm 与 LayerNorm的区别
-(1) 实现逻辑上，归一化的方向不同，BN对batchsize敏感，无法在线学习(bacth_size==1)
+(1) 实现逻辑上，归一化的方向不同，BN对batchsize敏感，无法在线学习(bacth_size==1)  
 (2) 使用效果上，BN对CNN网络效果好， LN对RNN网络效果好，LN在NLP任务上应用比较广
