@@ -12,3 +12,8 @@ BERT(Bidirectional Encoder Representations from Transformers)
 04. 前馈网络与层归一化  
 feed-forward && layernorm  
 05. 残差连接  
+
+FAQ
+---
+01. BERT中的emdedding方式？
+02. self-attention机制的意义？
