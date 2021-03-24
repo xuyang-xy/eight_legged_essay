@@ -24,3 +24,5 @@ self.token_type_embeddings = Embedding(config.type_vocab_size, config.hidden_siz
 ```
 02. self-attention机制的意义？  
 用文本中的其它词来增强目标词的语义表示，从而更好的利用上下文的信息
+03. 为什么BERT在第一句前会加一个[CLS]标志?  
+[CLS]符号会更“公平”地融合文本中各个词的语义信息，从而更好的表示整句话的语义。
