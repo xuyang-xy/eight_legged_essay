@@ -78,34 +78,34 @@ encoder_output = position_out + inputx_att
 
 FAQ
 ---
-01. embedding层相关
-(1) transformer中的位置编码？
-使用正余弦函数表示的位置矩阵，可以表示出相对距离
-(2) BERT中的位置编码？
-基于序列位置的随机表示，一个位置对应一个embdeeding(BERT数据更加充足)
-(3) BERT表示超长文本？
-(a) 源代码中直接截取最大长度512 (b) 层次化&主干提取
+01. embedding层相关  
+(1) transformer中的位置编码？  
+使用正余弦函数表示的位置矩阵，可以表示出相对距离  
+(2) BERT中的位置编码？  
+基于序列位置的随机表示，一个位置对应一个embdeeding(BERT数据更加充足)  
+(3) BERT表示超长文本？  
+(a) 源代码中直接截取最大长度512 (b) 层次化&主干提取  
 
-02. self-attention层相关
+02. self-attention层相关  
 (1) self-attention机制的意义？  
 用文本中的其它词来增强目标词的语义表示，从而更好的利用上下文的信息  
-(2) 为何使用多头？ 
+(2) 为何使用多头？  
 https://www.zhihu.com/question/341222779  
 多头保证了transformer可以注意到不同子空间的信息，捕捉到更加丰富的特征信息。其实本质上是论文原作者发现这样效果确实好  
-(3) 为何要缩放sqrt(dm)?
+(3) 为何要缩放sqrt(dm)?  
 比较大的输入会使得softmax的梯度变得很小  
-(4) Q和K使用不同的权重矩阵生成?
-打破对称性，增加泛化能力
-(5) self-attention 的时间复杂度？
-O(n^2d)
-(6) 在计算attention score的时候如何对padding做mask操作？
-对需要mask的位置设为负无穷，再对attention score进行相加
+(4) Q和K使用不同的权重矩阵生成?  
+打破对称性，增加泛化能力  
+(5) self-attention 的时间复杂度？  
+O(n^2d)  
+(6) 在计算attention score的时候如何对padding做mask操作？  
+对需要mask的位置设为负无穷，再对attention score进行相加  
 
-03. 前馈层&归一化层相关
-(1) 前馈层的结构和意义？
+03. 前馈层&归一化层相关  
+(1) 前馈层的结构和意义？  
 强化位置信息的表示和特征的提取(更好的提取特征)  
-(2) 归一化层的结构和意义？
-归一化是LayerNorm，在hiddensize维度作变换将数据分布拉会正太分布，方式梯度消失和爆炸
+(2) 归一化层的结构和意义？  
+归一化是LayerNorm，在hiddensize维度作变换将数据分布拉会正太分布，方式梯度消失和爆炸  
 
 04. 为什么BERT在第一句前会加一个[CLS]标志?  
-[CLS]符号会更“公平”地融合文本中各个词的语义信息，从而更好的表示整句话的语义。
+[CLS]符号会更“公平”地融合文本中各个词的语义信息，从而更好的表示整句话的语义  
